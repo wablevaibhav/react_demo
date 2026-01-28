@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
-import { useTransactionStore } from '../../transactions/stores/useTransactionStore';
-import { Card } from '../../../shared/ui/Card';
-import { TrendingUp, TrendingDown, Wallet, Target } from 'lucide-react';
-import { cn } from '../../../utils/cn';
+import { useMemo } from "react";
+import { useTransactionStore } from "../../transactions/stores/useTransactionStore";
+import { Card } from "../../../shared/ui/Card";
+import { TrendingUp, TrendingDown, Wallet, Target } from "lucide-react";
+import { cn } from "../../../utils/cn";
 
 interface MetricCardProps {
   label: string;
@@ -10,20 +10,20 @@ interface MetricCardProps {
   icon: any;
   trend?: string;
   trendUp?: boolean;
-  color: 'blue' | 'emerald' | 'rose' | 'violet';
+  color: "blue" | "emerald" | "rose" | "violet";
 }
 
 const MetricCard = ({ label, value, icon: Icon, color }: MetricCardProps) => {
   const colorStyles = {
-    blue: 'bg-blue-50 text-blue-600',
-    emerald: 'bg-emerald-50 text-emerald-600',
-    rose: 'bg-rose-50 text-rose-600',
-    violet: 'bg-violet-50 text-violet-600',
+    blue: "bg-blue-50 text-blue-600",
+    emerald: "bg-emerald-50 text-emerald-600",
+    rose: "bg-rose-50 text-rose-600",
+    violet: "bg-violet-50 text-violet-600",
   };
 
   return (
     <Card className="flex items-center gap-4 p-6">
-      <div className={cn('p-4 rounded-2xl', colorStyles[color])}>
+      <div className={cn("p-4 rounded-2xl", colorStyles[color])}>
         <Icon size={24} />
       </div>
       <div>
@@ -40,19 +40,29 @@ export const AnalyticsSummary = () => {
   const metrics = useMemo(() => {
     const totalIncome = getIncome();
     const totalExpenses = getExpenses();
-    const savingsRate = totalIncome > 0 ? ((totalIncome - totalExpenses) / totalIncome) * 100 : 0;
-    
+    const savingsRate =
+      totalIncome > 0 ? ((totalIncome - totalExpenses) / totalIncome) * 100 : 0;
+
     // Calculate average daily spending (last 30 days)
     const last30DaysExpenses = transactions
-      .filter(t => t.type === 'expense' && new Date(t.date) > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000))
+      .filter(
+        (t) =>
+          t.type === "expense" &&
+          new Date(t.date) > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+      )
       .reduce((acc, curr) => acc + curr.amount, 0);
     const avgDailySpend = last30DaysExpenses / 30;
 
     return {
-      savingsRate: savingsRate.toFixed(1) + '%',
-      avgDailySpend: '$' + avgDailySpend.toFixed(2),
+      savingsRate: savingsRate.toFixed(1) + "%",
+      avgDailySpend: "$" + avgDailySpend.toFixed(2),
       totalTransactions: transactions.length,
-      maxExpense: Math.max(...transactions.filter(t => t.type === 'expense').map(t => t.amount), 0)
+      maxExpense: Math.max(
+        ...transactions
+          .filter((t) => t.type === "expense")
+          .map((t) => t.amount),
+        0,
+      ),
     };
   }, [transactions, getIncome, getExpenses]);
 
@@ -70,7 +80,7 @@ export const AnalyticsSummary = () => {
         icon={Wallet}
         color="blue"
       />
-       <MetricCard
+      <MetricCard
         label="Total Transactions"
         value={metrics.totalTransactions.toString()}
         icon={TrendingUp}

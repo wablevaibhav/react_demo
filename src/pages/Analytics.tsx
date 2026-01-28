@@ -10,7 +10,7 @@ const Analytics = () => {
     <DashboardLayout>
       <div className="space-y-8">
         <h2 className="text-3xl font-bold text-slate-800">Analytics</h2>
-        
+
         <AnalyticsSummary />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

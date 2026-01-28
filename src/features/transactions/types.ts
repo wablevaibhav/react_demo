@@ -1,19 +1,19 @@
-export type TransactionType = 'income' | 'expense';
+export type TransactionType = "income" | "expense";
 
-export type TransactionCategory = 
-  | 'Housing' 
-  | 'Transport' 
-  | 'Food' 
-  | 'Utilities' 
-  | 'Insurance' 
-  | 'Healthcare' 
-  | 'Savings' 
-  | 'Personal' 
-  | 'Entertainment' 
-  | 'Miscellaneous'
-  | 'Salary' 
-  | 'Business' 
-  | 'Gifts';
+export type TransactionCategory =
+  | "Housing"
+  | "Transport"
+  | "Food"
+  | "Utilities"
+  | "Insurance"
+  | "Healthcare"
+  | "Savings"
+  | "Personal"
+  | "Entertainment"
+  | "Miscellaneous"
+  | "Salary"
+  | "Business"
+  | "Gifts";
 
 export interface Transaction {
   id: string;
@@ -24,4 +24,4 @@ export interface Transaction {
   date: string; // ISO String
 }
 
-export type TransactionInput = Omit<Transaction, 'id'>;
+export type TransactionInput = Omit<Transaction, "id">;

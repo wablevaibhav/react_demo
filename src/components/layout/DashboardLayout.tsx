@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Home,
-  PieChart,
-  CreditCard,
-  Settings,
-  LogOut,
-  Bell,
-} from "lucide-react";
+import { Home, PieChart } from "lucide-react";
 import { cn } from "../../utils/cn";
 import { Link, useLocation } from "react-router-dom";
 
@@ -66,16 +59,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
         <nav className="flex-1 space-y-2">
           <SidebarItem icon={Home} label="Overview" path="/" />
           <SidebarItem icon={PieChart} label="Analytics" path="/analytics" />
-          <SidebarItem icon={CreditCard} label="Cards" path="/cards" />
-          <SidebarItem icon={Settings} label="Settings" path="/settings" />
         </nav>
-
-        <div className="mt-auto pt-6 border-t border-slate-200">
-          <div className="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-red-600 cursor-pointer transition-colors">
-            <LogOut size={20} />
-            <span className="font-medium">Logout</span>
-          </div>
-        </div>
       </aside>
 
       {/* Main Content */}
@@ -83,16 +67,6 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
         {/* Header */}
         <header className="h-20 px-8 flex items-center justify-between sticky top-0 z-10 bg-slate-50/80 backdrop-blur-md border-b border-white/20">
           <h1 className="text-2xl font-bold text-slate-800">Dashboard</h1>
-
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-colors cursor-pointer relative">
-              <Bell size={20} />
-              <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white" />
-            </div>
-            <div className="w-10 h-10 rounded-full bg-indigo-100 border border-indigo-200 flex items-center justify-center text-indigo-700 font-bold">
-              VW
-            </div>
-          </div>
         </header>
 
         <div className="p-8">{children}</div>
