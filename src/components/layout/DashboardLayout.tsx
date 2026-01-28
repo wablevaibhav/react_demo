@@ -48,9 +48,11 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       {/* Sidebar */}
       <aside className="w-64 fixed h-full bg-slate-50/50 backdrop-blur-xl border-r border-slate-200 hidden md:flex flex-col p-6 z-20">
         <div className="flex items-center gap-2 mb-10 px-2">
-          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
-            E
-          </div>
+          <img
+            src="/favicon.png"
+            alt="Logo"
+            className="w-8 h-8 rounded-lg shadow-md"
+          />
           <span className="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-indigo-600">
             Xpense
           </span>
