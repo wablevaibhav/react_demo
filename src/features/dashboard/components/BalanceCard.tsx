@@ -22,7 +22,7 @@ export const BalanceCard = () => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="col-span-1 md:col-span-2 p-8 rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-xl relative overflow-hidden h-full"
+      className="col-span-1 md:col-span-2 p-8 rounded-3xl bg-linear-to-br from-blue-600 to-indigo-700 text-white shadow-xl relative overflow-hidden h-full"
     >
       {/* Decorative circles */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl" />

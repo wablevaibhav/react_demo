@@ -23,7 +23,7 @@ const Dashboard = () => {
         </div>
 
         {/* Right Column (1/3 width) */}
-        <div className="lg:col-span-1 h-full min-h-[500px]">
+        <div className="lg:col-span-1">
           <TransactionList />
         </div>
       </div>

@@ -47,7 +47,7 @@ export const TransactionList = () => {
         </h3>
       </div>
 
-      <div className="space-y-4 overflow-y-auto pr-2 custom-scrollbar flex-1 max-h-[400px]">
+      <div className="space-y-4 overflow-y-auto pr-2 custom-scrollbar flex-1 max-h-400">
         <AnimatePresence initial={false}>
           {transactions.length === 0 ? (
             <p className="text-slate-400 text-center py-8">

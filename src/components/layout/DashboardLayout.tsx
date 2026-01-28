@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, PieChart } from "lucide-react";
+import { Home, PieChart, Bell } from "lucide-react";
 import { cn } from "../../utils/cn";
 import { Link, useLocation } from "react-router-dom";
 
@@ -48,10 +48,10 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       {/* Sidebar */}
       <aside className="w-64 fixed h-full bg-slate-50/50 backdrop-blur-xl border-r border-slate-200 hidden md:flex flex-col p-6 z-20">
         <div className="flex items-center gap-2 mb-10 px-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
+          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
             E
           </div>
-          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+          <span className="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-indigo-600">
             Xpense
           </span>
         </div>
@@ -65,8 +65,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       {/* Main Content */}
       <main className="flex-1 md:ml-64 relative">
         {/* Header */}
-        <header className="h-20 px-8 flex items-center justify-between sticky top-0 z-10 bg-slate-50/80 backdrop-blur-md border-b border-white/20">
+        <header className="h-20 px-8 flex items-center justify-between top-0 z-10 bg-slate-50/80 backdrop-blur-md border-b border-white/20">
           <h1 className="text-2xl font-bold text-slate-800">Dashboard</h1>
+          <Bell />
         </header>
 
         <div className="p-8">{children}</div>
